@@ -13,21 +13,23 @@ repositories {
 }
 
 dependencies {
-    //testImplementation platform('org.junit:junit-bom:5.10.0')
     implementation 'org.springframework.boot:spring-boot-starter-web'
-    //testImplementation 'org.junit.jupiter:junit-jupiter'
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
-    //스프링 데이터 JPA
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-    runtimeOnly 'com.h2database:h2' //인메모리 데이터베이스
-    compileOnly 'org.projectlombok:lombok'//롬복
-    annotationProcessor 'org.projectlombok:lombok'
-    implementation 'org.springframework.boot:spring-boot-devtools'
-    implementation 'org.springframework.boot:spring-boot-starter-jdbc'
     implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
-    implementation 'org.springframework.security:spring-security-test'
+    implementation 'io.jsonwebtoken:jjwt:0.9.1'//자바 JWT 라이브러리
+    implementation 'javax.xml.bind:jaxb-api:2.3.1'//xml 문서와 java 객체 간 매핑 자동화
+
+    runtimeOnly 'com.h2database:h2'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testAnnotationProcessor 'org.projectlombok:lombok'
+
+    testImplementation 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
 }
 
 test {
